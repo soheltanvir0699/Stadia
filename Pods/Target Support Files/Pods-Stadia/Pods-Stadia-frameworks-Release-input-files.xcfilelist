@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-Stadia/Pods-Stadia-frameworks.sh
+${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework
+${BUILT_PRODUCTS_DIR}/Spring/Spring.framework
+${BUILT_PRODUCTS_DIR}/SwiftyBluetooth/SwiftyBluetooth.framework
+${BUILT_PRODUCTS_DIR}/UICheckbox.Swift/UICheckbox_Swift.framework
