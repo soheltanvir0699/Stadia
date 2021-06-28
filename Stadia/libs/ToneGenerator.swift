@@ -21,7 +21,7 @@ final class ToneOutputUnit: NSObject {
     var f0  =    880.0              // default frequency of tone:   'A' above Concert A
     var v0  =  16383.0              // default volume of tone:      half full scale
 
-    var toneCount : Int32 = 0       // number of samples of tone to play.  0 for silence
+    var toneCount : Int = 0       // number of samples of tone to play.  0 for silence
 
     private var phY =     0.0       // save phase of sine wave to prevent clicking
     private var interrupted = false     // for restart from audio interruption notification
@@ -37,7 +37,7 @@ final class ToneOutputUnit: NSObject {
     }
     
     func setToneTime(t : Double) {
-        toneCount = Int32(t * sampleRate);
+        toneCount = Int(t * sampleRate);
     }
 
     func enableSpeaker() {
@@ -140,7 +140,7 @@ final class ToneOutputUnit: NSObject {
                 }
 
                 self.phY        =   a                   // save sinewave phase
-                self.toneCount  -=  Int32(frameCount)   // decrement time remaining
+                self.toneCount  -=  Int(frameCount)   // decrement time remaining
             } else {
                 // audioStalled = true
                 memset(mBuffers.mData, 0, Int(mBuffers.mDataByteSize))  // silence

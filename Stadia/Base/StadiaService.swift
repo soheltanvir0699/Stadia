@@ -14,23 +14,29 @@ class StadiaService {
     func callNotification(bettery: String, distance: String) {
         calulateData(battery: bettery, distance: distance)
     }
-    func calulateData(battery:String, distance: String) {
-        if distance.count != 0 && !distance.contains("STANDBY") {
+    func calulateData(battery:String, distance: String?) {
+        if distance!.count != 0 && !distance!.contains("STANDBY") {
             if distance == "1" {
-                let heightAlert = isHeightAlert(heightInt: Int(distance.trimmingCharacters(in: .whitespacesAndNewlines))!)
-                print("height Alert", heightAlert)
+                let heightAlert = isHeightAlert(heightInt: Int(distance!.trimmingCharacters(in: .whitespacesAndNewlines))!)
                 NotificationCenter.default.post(name: .sendData, object: nil, userInfo: ["isAlert": heightAlert.first, "distance": "UNKNOWN", "battery": battery])
                 audioManager.stop()
             }else {
-                print("hetislkdsjdk \(distance)")
-                let heightAlert = isHeightAlert(heightInt: Int(distance.trimmingCharacters(in: .whitespacesAndNewlines))!)
-                print("height Alert", heightAlert)
+                let heightAlert = isHeightAlert(heightInt: Int(distance!.trimmingCharacters(in: .whitespacesAndNewlines))!)
                 NotificationCenter.default.post(name: .sendData, object: nil, userInfo: ["isAlert": heightAlert.first, "distance": String(format: "%0.1f", heightAlert.second), "battery": battery])
                 if(heightAlert.first){
-                    var distanceInCm = getHeightAfterCalibrate(heightInt: Int(distance)!)
-                    audioManager.start(height: distanceInCm)
+                    if distance != nil {
+                        let distanceInCm = getHeightAfterCalibrate(heightInt: Int(distance!.trimmingCharacters(in: .whitespacesAndNewlines))!)
+//                        audioManager.stop()
+                        print("start sound")
+                        audioManager.start(height: distanceInCm)
+                    }
+                    else {
+                        print("distance nil")
+                    }
+                    
                     
                 }else {
+                    print("stop sound")
                     audioManager.stop()
                 }
             }

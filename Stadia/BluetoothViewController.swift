@@ -175,7 +175,6 @@ class BluetoothViewController: UIViewController, CBCentralManagerDelegate, CBPer
     }
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {
-        print(characteristic)
         peripheral.setNotifyValue(true, for: characteristic)
        
     }
