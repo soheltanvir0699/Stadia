@@ -26,8 +26,8 @@ class SettingsViewController: UIViewController {
             btnImp.radioSelected = true
         }
         checkBOx.isSelected = Constant.SoundAlert
-        slider.value = Constant.seekbarValue
-        lblSlider.text = "\(Int(Constant.seekbarValue*100))"
+        slider.value = Float(Constant.seekbarValue)/100.0
+        lblSlider.text = "\(Int(Constant.seekbarValue))"
         checkBOx.onSelectStateChanged = { (checkbox, selected) in
             print("Clicked - \(selected)")
             Constant.SoundAlert = selected
@@ -57,7 +57,7 @@ class SettingsViewController: UIViewController {
     @IBAction func sliderAction(_ sender: UISlider) {
         print(sender.value)
         lblSlider.text = "\(Int(sender.value*100))"
-        Constant.seekbarValue = sender.value
+        Constant.seekbarValue = Int(sender.value * 100)
         
     }
     

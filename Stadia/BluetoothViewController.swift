@@ -28,7 +28,7 @@ class BluetoothViewController: UIViewController, CBCentralManagerDelegate, CBPer
         super.viewDidLoad()
         connectImg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(scanDevice)))
         BLEManager.getSharedBLEManager().initCentralManager(queue: DispatchQueue.main, options: nil)
-        
+        lblCalibrate.text = "\(Constant.HEIGHT_OFFSET)"
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -61,6 +61,14 @@ class BluetoothViewController: UIViewController, CBCentralManagerDelegate, CBPer
         
         
     }
+    @IBAction func enterAction(_ sender: Any) {
+        lblCalibrate.text = manulFld.text
+        if manulFld.text != "" {
+            Constant.HEIGHT_OFFSET = Int(manulFld.text!)!
+        }
+       
+    }
+    
     func cenToInc(cen: Double) -> String {
         return String(format: "%.2f", (cen/2.5).rounded())
     }
@@ -326,7 +334,8 @@ extension BluetoothViewController: UITableViewDelegate, UITableViewDataSource {
                 var stringResponse = String(bytes: charac.value!, encoding: .utf8)!
                 if stringResponse.contains("|") {
                    var splitValue = stringResponse.split(separator: "|")
-                    StadiaService.stadiaService.callNotification(bettery: "\(splitValue[1])", distance: String(splitValue[0]))
+                    print(splitValue[0], "distance")
+                    StadiaService.stadiaService.callNotification(bettery: "\(splitValue[1])", distance: String(splitValue[0].trimmingCharacters(in: .whitespacesAndNewlines)))
                     
                     Constant.Calibrate_Value = Int(splitValue[0].trimmingCharacters(in: .whitespacesAndNewlines))!
                     Constant.BetteryLbl = Int(splitValue[1].trimmingCharacters(in: .whitespacesAndNewlines))!

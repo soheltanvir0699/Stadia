@@ -52,15 +52,15 @@ class Constant {
              return str_user_value
          }
      }
-    static var seekbarValue: Float {
+    static var seekbarValue: Int {
          set {
              UserDefaults.standard.set(newValue, forKey: "seekbarValue")
          } get {
-            var str_user_value = 0.0
+            var str_user_value = 0
              if UserDefaults.standard.value(forKey: "seekbarValue") != nil {
-                str_user_value = UserDefaults.standard.value(forKey: "seekbarValue") as! Double
+                str_user_value = UserDefaults.standard.value(forKey: "seekbarValue") as! Int
              }
-            return Float(str_user_value)
+            return str_user_value
          }
      }
     static var SoundAlert: Bool {

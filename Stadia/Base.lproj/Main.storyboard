@@ -476,6 +476,9 @@
                                                         <real key="value" value="0.20000000000000001"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="enterAction:" destination="9v2-zQ-jzf" eventType="touchUpInside" id="OJ8-Pl-a0P"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rh9-zs-cjq" customClass="BXButton" customModule="Stadia" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="650.5" width="374" height="50"/>
@@ -573,7 +576,7 @@
                                         </constraints>
                                     </view>
                                     <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GCw-Du-0fh">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="758"/>
+                                        <rect key="frame" x="0.0" y="6.5" width="414" height="758"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="wa0-eT-5Ac">
@@ -923,9 +926,6 @@
         <designable name="FdF-tQ-BUP">
             <size key="intrinsicContentSize" width="51" height="32"/>
         </designable>
-        <designable name="HEf-6a-x3q">
-            <size key="intrinsicContentSize" width="34" height="34"/>
-        </designable>
         <designable name="JTD-up-Apx">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
@@ -946,12 +946,6 @@
         </designable>
         <designable name="rh9-zs-cjq">
             <size key="intrinsicContentSize" width="99" height="33"/>
-        </designable>
-        <designable name="uOK-3j-coT">
-            <size key="intrinsicContentSize" width="41" height="34"/>
-        </designable>
-        <designable name="uXO-3a-RhJ">
-            <size key="intrinsicContentSize" width="64" height="34"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
