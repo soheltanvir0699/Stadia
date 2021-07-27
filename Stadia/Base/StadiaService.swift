@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class StadiaService {
-    var slowDownAudioPlayerCount = 0
+    var slowDownAudioPlayerCount = 8
     var audioManager = AudioManager()
     static var stadiaService = StadiaService()
     func callNotification(bettery: String, distance: String) {
@@ -35,7 +35,11 @@ class StadiaService {
                             if slowDownAudioPlayerCount < 7 {
                                 slowDownAudioPlayerCount += 1
                             }else {
+                                if Constant.SoundAlert {
                                 audioManager.start(height: distanceInCm)
+                                }else {
+                                    audioManager.stop()
+                                }
                                 slowDownAudioPlayerCount = 0
                             }
                             
