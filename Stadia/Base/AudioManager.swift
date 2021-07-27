@@ -52,6 +52,7 @@ final class AudioManager: NSObject {
     }
     
     func start(height: Int = 150) {
+        myUnit.stop()
         calculateToneProps(height: height)
         myUnit.setFrequency(freq: Double(frequency))
         print(volume)

@@ -45,8 +45,10 @@
 	<true/>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>audio</string>
 		<string>bluetooth-central</string>
 		<string>bluetooth-peripheral</string>
+		<string>fetch</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

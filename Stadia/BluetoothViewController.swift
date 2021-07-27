@@ -96,17 +96,22 @@ class BluetoothViewController: UIViewController, CBCentralManagerDelegate, CBPer
                     }else {
                         for (i,cdArr) in self.CBPeripheralArray.enumerated() {
                         if cdArr.identifier == peripheral.identifier {
-                            rssiArray[i] = RSSI!
-                            tblView.reloadData()
-                            tblView.isHidden = false
-                            cancelBtn.isHidden = false
+                            if RSSI != nil {
+                                rssiArray[i] = RSSI!
+                                tblView.reloadData()
+                                tblView.isHidden = false
+                                cancelBtn.isHidden = false
+                            }
+                            
                             return
                         }else {
 
                         }
                     }
+                        if RSSI != nil {
                         CBPeripheralArray.append(peripheral)
                         rssiArray.append(RSSI!)
+                        }
                     }
                     
                     tblView.reloadData()

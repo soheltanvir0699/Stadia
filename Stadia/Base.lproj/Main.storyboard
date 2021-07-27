@@ -576,7 +576,7 @@
                                         </constraints>
                                     </view>
                                     <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GCw-Du-0fh">
-                                        <rect key="frame" x="0.0" y="6.5" width="414" height="758"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="758"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="wa0-eT-5Ac">
@@ -949,7 +949,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="Pjq-lS-mE8"/>
+        <segue reference="TTt-bO-Z1H"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bluetooth" width="560" height="560"/>
