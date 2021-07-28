@@ -52,7 +52,11 @@ class HeightViewController: UIViewController {
                 }else {
                     betterCondition.isHidden = true
                 }
+                if Constant.dataCommand == "1" {
+                    heightLbl.text = "STANDBY"
+                }else {
                 heightLbl.text = ""+distance
+                }
             }
         }else {
             
