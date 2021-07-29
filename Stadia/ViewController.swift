@@ -22,6 +22,18 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func termsAndCondition(_ sender: Any) {
+        let rateUrl = "https://skeeterenterprises.com/terms-and-conditions"
+        if UIApplication.shared.canOpenURL(URL.init(string: rateUrl)!) {
+            UIApplication.shared.open(URL.init(string: rateUrl)!, options: [:], completionHandler: nil)
+        }
+    }
+    @IBAction func instruction(_ sender: Any) {
+        let rateUrl = "https://skeeterenterprises.com/stadia-instructions"
+        if UIApplication.shared.canOpenURL(URL.init(string: rateUrl)!) {
+            UIApplication.shared.open(URL.init(string: rateUrl)!, options: [:], completionHandler: nil)
+        }
+    }
     func setupAudio() {
       let audioSession = AVAudioSession.sharedInstance()
         _ = try? audioSession.setCategory(AVAudioSession.Category.playback, options: .duckOthers)

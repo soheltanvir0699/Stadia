@@ -80,7 +80,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Wdj-VZ-Q2p">
-                                <rect key="frame" x="50.5" y="611" width="313.5" height="23"/>
+                                <rect key="frame" x="58.5" y="611" width="297.5" height="23"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Users agree to the" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXQ-g5-iH8">
                                         <rect key="frame" x="0.0" y="0.0" width="140.5" height="23"/>
@@ -88,19 +88,22 @@
                                         <color key="textColor" red="0.58883732560000002" green="0.58885163070000002" blue="0.58884394169999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZX4-rj-UKt">
-                                        <rect key="frame" x="147.5" y="0.0" width="166" height="23"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.24569916729999999" green="0.88533145189999995" blue="0.78140884639999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afL-mP-bMv">
+                                        <rect key="frame" x="147.5" y="0.0" width="150" height="23"/>
+                                        <state key="normal" title="Terms and Conditions">
+                                            <color key="titleColor" red="0.3184587955" green="0.73162072899999997" blue="0.667350471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="termsAndCondition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8sB-ck-Ybx"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="Rkb-CG-zld"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="OnP-Qy-xbq">
-                                <rect key="frame" x="108" y="659" width="198" height="23"/>
+                                <rect key="frame" x="112.5" y="659" width="189" height="23"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click here for" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m97-cK-UJJ">
                                         <rect key="frame" x="0.0" y="0.0" width="101" height="23"/>
@@ -108,12 +111,15 @@
                                         <color key="textColor" red="0.58883732560000002" green="0.58885163070000002" blue="0.58884394169999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LM3-rV-yGT">
-                                        <rect key="frame" x="108" y="0.0" width="90" height="23"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.24569916729999999" green="0.88533145189999995" blue="0.78140884639999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mG1-ov-fzX">
+                                        <rect key="frame" x="108" y="0.0" width="81" height="23"/>
+                                        <state key="normal" title="Instructions">
+                                            <color key="titleColor" red="0.3184587955" green="0.73162072899999997" blue="0.667350471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="instruction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bx5-wC-rd3"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="We7-92-cgG"/>
@@ -144,8 +150,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="6aQ-ga-Ldh"/>
                     <connections>
-                        <outlet property="lblInstr" destination="LM3-rV-yGT" id="NAm-YV-dbm"/>
-                        <outlet property="lblTermsCon" destination="ZX4-rj-UKt" id="BgH-gF-g8H"/>
                         <segue destination="iSJ-2W-uxO" kind="push" id="oeU-y9-o8I"/>
                     </connections>
                 </viewController>
