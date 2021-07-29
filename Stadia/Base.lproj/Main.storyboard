@@ -150,6 +150,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="6aQ-ga-Ldh"/>
                     <connections>
+                        <outlet property="lblInstr" destination="mG1-ov-fzX" id="cap-by-C3x"/>
+                        <outlet property="lblTermsCon" destination="afL-mP-bMv" id="EQ8-vY-i8d"/>
                         <segue destination="iSJ-2W-uxO" kind="push" id="oeU-y9-o8I"/>
                     </connections>
                 </viewController>

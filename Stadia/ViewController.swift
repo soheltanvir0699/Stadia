@@ -10,9 +10,11 @@ import AVKit
 import CoreAudio
 
 class ViewController: UIViewController {
-    @IBOutlet weak var lblTermsCon: UILabel!
+//    @IBOutlet weak var lblTermsCon: UILabel!
     
-    @IBOutlet weak var lblInstr: UILabel!
+    @IBOutlet weak var lblInstr: UIButton!
+    @IBOutlet weak var lblTermsCon: UIButton!
+//    @IBOutlet weak var lblInstr: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
