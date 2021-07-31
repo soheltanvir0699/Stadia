@@ -739,6 +739,9 @@
                                                 <real key="value" value="0.5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="playBtnAction:" destination="2qh-Tb-Gfy" eventType="touchUpInside" id="dgI-js-nRl"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ax7-po-g0i" customClass="radioButton" customModule="Stadia" customModuleProvider="target">
                                         <rect key="frame" x="25" y="216" width="90" height="50"/>
@@ -955,7 +958,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="TTt-bO-Z1H"/>
+        <segue reference="Pjq-lS-mE8"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bluetooth" width="560" height="560"/>

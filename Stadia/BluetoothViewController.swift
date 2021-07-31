@@ -76,6 +76,8 @@ class BluetoothViewController: UIViewController, CBCentralManagerDelegate, CBPer
         calibrateAction()
     }
     @objc func scanDevice() {
+        tblView.isHidden = false
+        cancelBtn.isHidden = false
         print("Started Scanning!")
         //Could add service UUID here to scan for only relevant services
         
@@ -86,10 +88,7 @@ class BluetoothViewController: UIViewController, CBCentralManagerDelegate, CBPer
                 break
                     // The scan started meaning CBCentralManager scanForPeripherals(...) was called
                 case .scanResult(let peripheral, let advertisementData, let RSSI):
-                    print(peripheral.name)
-                    print("ad", advertisementData)
-                    print("rss", RSSI)
-                    print("per", peripheral)
+                   
                     if self.CBPeripheralArray.count == 0 {
                         self.CBPeripheralArray.append(peripheral)
                         self.rssiArray.append(RSSI!)
@@ -99,8 +98,7 @@ class BluetoothViewController: UIViewController, CBCentralManagerDelegate, CBPer
                             if RSSI != nil {
                                 rssiArray[i] = RSSI!
                                 tblView.reloadData()
-                                tblView.isHidden = false
-                                cancelBtn.isHidden = false
+                                
                             }
                             
                             return
@@ -115,8 +113,7 @@ class BluetoothViewController: UIViewController, CBCentralManagerDelegate, CBPer
                     }
                     
                     tblView.reloadData()
-                    tblView.isHidden = false
-                    cancelBtn.isHidden = false
+                    
                     // A peripheral was found, your closure may be called multiple time with a .ScanResult enum case.
                     // You can save that peripheral for future use, or call some of its functions directly in this closure.
             
@@ -182,6 +179,17 @@ class BluetoothViewController: UIViewController, CBCentralManagerDelegate, CBPer
         
         peripheral.discoverServices([CBUUID(string: "6E400003-B5A3-F393-E0A9-E50E24DCCA9E")])
         
+    }
+    
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        print("dis connect")
+        if peripheral.state == .disconnected {
+            connectLbl.text = "Tap button to connect to STADIA via BlueTooth"
+            connectLbl.textColor = UIColor.red
+        }else {
+            connectLbl.text = "Connected"
+            connectLbl.textColor = UIColor.green
+        }
     }
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         print(error, peripheral)
@@ -251,6 +259,14 @@ extension BluetoothViewController: UITableViewDelegate, UITableViewDataSource {
                         }
                     case .failure(let error):
                         print(error, "error")
+                        Constant.IsDeviceConnect = false
+                        self.tblView.isHidden = true
+                        self.cancelBtn.isHidden = true
+                        self.connectLbl.text = "Tap button to connect to STADIA via BlueTooth"
+                        self.connectLbl.textColor = UIColor.red
+                        self.CBPeripheralArray[indexPath.row].disconnect { result in
+                            print(result)
+                        }
                     }
                 }
             case .failure(let error):
@@ -259,6 +275,9 @@ extension BluetoothViewController: UITableViewDelegate, UITableViewDataSource {
                 self.cancelBtn.isHidden = true
                 self.connectLbl.text = "Tap button to connect to STADIA via BlueTooth"
                 self.connectLbl.textColor = UIColor.red
+                self.CBPeripheralArray[indexPath.row].disconnect { result in
+                    print(result)
+                }
             }
         }
     }

@@ -88,7 +88,17 @@ class HeightViewController: UIViewController {
         testBtn.setTitleColor(.gray, for: .normal)
         unMuteBtn.setTitleColor(.black, for: .normal)
         muteBtn.setTitleColor(.black, for: .normal)
-//        audioManager.start()
+//        audioManager.start(height: 400)
+        let myUnit = ToneOutputUnit()
+        myUnit.setFrequency(freq: Double(frequency))
+        print(volume)
+        myUnit.setToneVolume(vol: 1.0)
+            myUnit.enableSpeaker()
+        
+        myUnit.setToneTime(t: 5.0)
+        DispatchQueue.global(qos: .background).asyncAfter(deadline: .now()+2) {
+            myUnit.stop()
+        }
         
     }
     
