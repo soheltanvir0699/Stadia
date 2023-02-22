@@ -1,0 +1,36 @@
+PODS:
+  - IQKeyboardManagerSwift (6.5.6)
+  - Spring (1.0.6)
+  - SwiftyBluetooth (2.1.0)
+  - UICheckbox.Swift (1.0.0)
+
+DEPENDENCIES:
+  - IQKeyboardManagerSwift
+  - Spring (from `https://github.com/trongnhan68/Spring`)
+  - SwiftyBluetooth (~> 2.1.0)
+  - UICheckbox.Swift
+
+SPEC REPOS:
+  trunk:
+    - IQKeyboardManagerSwift
+    - SwiftyBluetooth
+    - UICheckbox.Swift
+
+EXTERNAL SOURCES:
+  Spring:
+    :git: https://github.com/trongnhan68/Spring
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: febc1fa3787b19f8dc21c48d5e7bb826ef46bb25
+    :git: https://github.com/trongnhan68/Spring
+
+SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
+  SwiftyBluetooth: c7ee2807e5708b7d43e36f595bf25ec60134009a
+  UICheckbox.Swift: 85715689206fac5bae38b308f19c2a3e00442c3b
+
+PODFILE CHECKSUM: 0932a0fbdf5a0f1984566f3375768ecbd9ac6b6b
+
+COCOAPODS: 1.10.1

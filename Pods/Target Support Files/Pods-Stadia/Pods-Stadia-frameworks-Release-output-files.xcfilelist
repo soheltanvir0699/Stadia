@@ -1,0 +1,4 @@
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBluetooth.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICheckbox_Swift.framework
