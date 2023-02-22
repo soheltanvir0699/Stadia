@@ -10,6 +10,4 @@ target 'Stadia' do
  pod 'UICheckbox.Swift'
  pod 'SwiftyBluetooth', '~> 2.1.0'
 
-  # Pods for Stadia
-
 end
