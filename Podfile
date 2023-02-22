@@ -9,5 +9,7 @@ target 'Stadia' do
  pod 'IQKeyboardManagerSwift'
  pod 'UICheckbox.Swift'
  pod 'SwiftyBluetooth', '~> 2.1.0'
+# Pods for Stadia
+# Pods for Stadia dad
 
 end
